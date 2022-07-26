@@ -1,0 +1,23 @@
+void sortedinsert(stack<int>& stack,int num){
+    //base condition
+    if(stack.empty() || (!stack.empty() && stack.top()<num)){
+        stack.push(num);
+        return ;
+   }
+    int n=stack.top();
+    stack.pop();
+    sortedinsert(stack,num);
+    stack.push(n);
+}
+void sortStack(stack<int> &stack)
+{
+	// Write your code here
+    //base case
+    if(stack.empty()){
+        return ;
+    }
+    int num=stack.top();
+    stack.pop();
+    sortStack(stack);
+    sortedinsert(stack,num);
+}
