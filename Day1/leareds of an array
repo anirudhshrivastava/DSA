@@ -1,0 +1,19 @@
+ public:
+    vector<int> leaders(int a[], int n){
+        // Code here
+        vector<int> v;
+        int currelement=a[n-1]; //last element
+        v.push_back(currelement);
+        for(int i=n-2;i>=0;i--)
+        {             //5>=2
+         if(a[i]>=currelement)
+         {
+             
+             currelement=a[i];
+             v.push_back(currelement);
+         }
+           
+        }
+         reverse(v.begin(),v.end());
+            return v;
+    }
