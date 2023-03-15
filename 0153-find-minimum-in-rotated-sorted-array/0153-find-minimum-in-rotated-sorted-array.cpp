@@ -1,32 +1,34 @@
 class Solution {
 public:
     int findMin(vector<int>& nums) {
-         int s=0;
-        int n=nums.size();
-        int e=n-1;
-        if(n==1){
+          int left=0;
+        int right=nums.size()-1;
+        int last=nums.size()-1;
+        int mid;
+        if(nums[0]<=nums[last])//未被轉置 &若nums只有一位數
+        {
             return nums[0];
         }
-        vector<int>v;
-        int ans=0;
-        while(s<=e){
-            
-            if(nums[s]<nums[e]){
-                return nums[s];
+        while(left<=right)
+        {
+            mid=(left+right)/2;
+            if(nums[mid]>nums[mid+1])
+            {
+                return nums[mid+1];
             }
-            int mid=s+(e-s)/2;
-            int next=(mid+1)%n;
-            int prev=(mid+n-1)%n;
-            if(nums[mid]<=nums[prev] && nums[mid]<=nums[next]){
-                ans=nums[mid];
+            else if(nums[mid-1]>nums[mid])
+            {
+                return nums[mid];
             }
-            if(nums[s]<=nums[mid]){
-                s=mid+1;
+            else if(nums[mid]>nums[last] && nums[mid]>nums[0])
+            {
+                left=mid+1;
             }
-            else if(nums[mid]<=nums[e]){
-                e=mid;
+            else if(nums[mid]<nums[last] && nums[mid]<nums[0])
+            {
+                right=mid-1;
             }
         }
-        return ans;
+        return 0; 
     }
 };
