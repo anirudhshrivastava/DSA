@@ -12,13 +12,8 @@ class Solution
 public:
     int largest(vector<int> &arr, int n)
     {
-        int a=INT_MIN;
-        for(int i=0;i<n;i++){
-            if(arr[i]>a){
-                a=arr[i];
-            }
-        }
-        return a;
+        sort(arr.begin(),arr.end());
+        return arr[n-1];
     }
 };
 
