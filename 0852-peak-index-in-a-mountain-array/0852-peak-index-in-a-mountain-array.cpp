@@ -5,8 +5,7 @@ public:
      int s=0;
      int e=n-1;
      int mid=s+(e-s)/2;
-     int next=(mid+1)%n;
-        int prev=(mid-1+n)%n;
+     
         while(s<e){
             
             if(arr[mid]<arr[mid+1]){
