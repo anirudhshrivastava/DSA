@@ -11,7 +11,21 @@ class Solution{
 public:
     void segregate0and1(int arr[], int n) {
         // code here
-        sort(arr,arr+n);
+        //sort(arr,arr+n);
+        int temp[n];
+        int j=0;
+        
+        for(int i=0;i<n;i++){
+            if(arr[i]==0){
+                temp[j++]=arr[i];
+            }
+        }
+          for(int i=0;i<n;i++){
+            if(arr[i]==1){
+                temp[j++]=arr[i];
+            }
+        }
+        memcpy(arr,temp,sizeof(temp));
     }
 };
 
