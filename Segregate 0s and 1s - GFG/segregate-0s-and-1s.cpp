@@ -12,7 +12,7 @@ public:
     void segregate0and1(int arr[], int n) {
         // code here
         //sort(arr,arr+n);
-        int temp[n];
+       /* int temp[n];
         int j=0;
         
         for(int i=0;i<n;i++){
@@ -26,6 +26,19 @@ public:
             }
         }
         memcpy(arr,temp,sizeof(temp));
+        */
+        int low=0;
+        int mid=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]==0){
+                swap(arr[mid],arr[low]);
+                low++;
+                mid++;
+            }
+            else if(arr[i]==1){
+                mid++;
+            }
+        }
     }
 };
 
