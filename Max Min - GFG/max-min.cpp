@@ -13,18 +13,24 @@ class Solution
     int findSum(int arr[], int N)
     {
     	//code here.
+    /*	sort(A,A+N);
+    	int sum=A[0]+A[N-1];
+    	return sum;*/
+    	int sum=0;
     	int min=INT_MAX;
     	int max=INT_MIN;
     	for(int i=0;i<N;i++){
     	    if(arr[i]>max){
     	        max=arr[i];
     	    }
-    	     if(arr[i]<min){
+    	    if(arr[i]<min){
     	        min=arr[i];
     	    }
     	}
-    	int c=max+min;
-    	return c;
+    //	for(int i=0;i<N;i++){
+    	    
+    //	}
+    	sum=max+min;
     	
     }
 
